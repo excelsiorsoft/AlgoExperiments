@@ -1,7 +1,5 @@
 package com.excelsiorsoft.binarytrees;
 
-import java.io.File;
-import java.io.FileReader;
 import java.util.Scanner;
 
 import org.junit.Test;
