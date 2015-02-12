@@ -3,6 +3,7 @@ package com.excelsiorsoft.binarytrees;
 import java.util.*;
 
 public class BinaryTree {
+	private static final String NULL_SYMBOL = "@";
 	TreeNode root;
 
 	public BinaryTree() {
@@ -13,9 +14,9 @@ public class BinaryTree {
 		root = buildTree(in);
 	}
 
-	public static TreeNode buildTree(Scanner in) {
+	private static TreeNode buildTree(Scanner in) {
 		String str = in.next();
-		if (str.equals("@"))
+		if (NULL_SYMBOL.equals(str))
 			return null;
 		TreeNode p = new TreeNode(new NodeData(str));
 		p.left = buildTree(in);
@@ -27,7 +28,7 @@ public class BinaryTree {
 		preOrderTraversal(root);
 	}
 
-	public void preOrderTraversal(TreeNode node) {
+	private void preOrderTraversal(TreeNode node) {
 		if (node != null) {
 			node.data.visit();
 			preOrderTraversal(node.left);
@@ -39,13 +40,13 @@ public class BinaryTree {
 		inOrderTraversal(root);
 	}
 
-	public void inOrderTraversal(TreeNode node) {
+	private void inOrderTraversal(TreeNode node) {
 		if (node != null) {
 			inOrderTraversal(node.left);
 			node.data.visit();
 			inOrderTraversal(node.right);
 		}
-	} // end inOrderTraversal
+	} 
 
 	public void postOrder() {
 		postOrderTraversal(root);
@@ -57,6 +58,6 @@ public class BinaryTree {
 			postOrderTraversal(node.right);
 			node.data.visit();
 		}
-	} // end postOrderTraversal
+	} 
 
-} // end class BinaryTree
+} 
